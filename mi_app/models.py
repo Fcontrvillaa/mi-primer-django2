@@ -9,6 +9,11 @@ class Producto(models.Model):
     stock = models.PositiveIntegerField("stock", default=0)
     creado = models.DateTimeField("creado", auto_now_add=True)
     actualizado = models.DateTimeField("actualizado", auto_now=True)
+##setear una columnade imagen  
+    imagen = models.ImageField("imagen", upload_to='productos/', null=True, blank=True) # ¡Nueva columna!
+
 
     def __str__(self):
         return f"{self.nombre}"
+    
+

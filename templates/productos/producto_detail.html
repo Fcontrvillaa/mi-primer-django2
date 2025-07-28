@@ -1,0 +1,15 @@
+<div class="container py-4">
+    <h1>{{ producto.nombre }}</h1>
+    {% if producto.imagen %}
+        <img src="{{ producto.imagen.url }}" alt="{{ producto.nombre }}" class="img-fluid mb-3">
+    {% endif %}
+    <p><strong>Precio:</strong> ${{ producto.precio }}</p>
+    <p><strong>Stock:</strong> {{ producto.stock }}</p>
+    <p>{{ producto.descripcion }}</p>
+
+    
+    <a href="{% url 'update_producto' producto.pk %}" class="btn btn-danger">Editar</a>
+    <a href="{% url 'borrar_producto' producto.pk %}" class="btn btn-secondary">Eliminar</a>
+    <a href="{% url 'lista_productos' %}" class="btn btn-warning">Volver al LISTADO</a>
+      
+</div>

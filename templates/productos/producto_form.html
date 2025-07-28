@@ -1,0 +1,28 @@
+<div class="container py-4">
+    {% if form.instance.pk %}
+    <h1>Editar producto</h1>
+    {% else %}
+    <h1>Nuevo producto</h1>
+    {% endif %}
+    <form method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        {{ form.non_field_errors }}
+        <div class="mb-3">
+            {{ form.nombre.label_tag }}
+            {{ form.nombre }}
+            {{ form.nombre.errors }}
+        </div>
+        <div class="mb-3">
+            {{ form.descripcion.label_tag }}
+            {{ form.descripcion }}
+            {{ form.descripcion.errors }}
+        </div>
+        <div class="mb-3">
+            {{ form.precio.label_tag }}
+            {{ form.precio }}
+            {{ form.precio.errors }}
+        </div>
+        <button  type="submit" class="btn btn-primary">Guardar</button>
+        <a href="{% url 'lista_productos' %}" class="btn btn-secondary" >Cancelar</a>
+    </form>
+</div>

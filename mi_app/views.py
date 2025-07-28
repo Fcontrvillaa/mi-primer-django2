@@ -25,19 +25,19 @@ class ProductoListView(ListView):
 class ProductoDetailView(DetailView):
     model = Producto
     template_name = "productos/producto_detail.html"
-    context_object_name = "productos"
+    context_object_name = "producto"
 
 class ProductoCreateView(CreateView):
     model = Producto
     template_name = "productos/producto_form.html"
     field = ["nombre","descripcion", "precio", "stock", "image"]
-    succes_url = reverse_lazy("productos")
+    succes_url = reverse_lazy("lista_productos")
 
 class ProductoUpdateView(UpdateView):
     model = Producto
     template_name = "productos/producto_form.html"
     field = ["nombre","descripcion", "precio", "stock", "image"]
-    succes_url = reverse_lazy("productos")
+    succes_url = reverse_lazy("lista_productos")
 
 
 class ProductoDeleteView(DeleteView):
